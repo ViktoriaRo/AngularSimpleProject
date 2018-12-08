@@ -1,11 +1,14 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app>
   <head>
-    <title>TheNetNinja Angular Playlist</title>
+    <title>Angular project</title>
     <link href="content/css/styles.css" rel="stylesheet" type="text/css" />
     <script src="app/lib/angular.min.js"></script>
   </head>
-  <body>
-
+  <body ng-init="colors=['red', 'black', 'green', 'blue', 'white', 'orange']">
+    <input type='text' ng-model='favMeat' placeholder="input your favorite meat" />
+    <ul>
+      <li ng-repeat="color in colors"> {{color}} </li>
+    </ul>
   </body>
 </html>
