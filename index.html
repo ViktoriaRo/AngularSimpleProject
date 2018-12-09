@@ -6,10 +6,10 @@
     <script src="app/lib/angular.min.js"></script>
     <script src="app/app.js"></script>
   </head>
-  <body ng-init="colors=['red', 'black', 'green', 'blue', 'white', 'orange']">
-    <input type='text' ng-model='favMeat' placeholder="input your favorite meat" />
-    <ul>
-      <li ng-repeat="color in colors"> {{color}} </li>
+  <body ng-controller="ProjectController">
+    <ul ng-repeat="color in colors">
+      <li>{{color}}</li>
     </ul>
+
   </body>
 </html>
