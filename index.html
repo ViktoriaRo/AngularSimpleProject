@@ -11,9 +11,13 @@
     <div class="content">
       <div ng-controller="ProjectController">
         <input type="text" ng-model="search" placeholder="Search for color"/>
+        <button ng-click="order = 'code'">Order by name in RO</button>
+        <button ng-click="order = 'name'">Order by name in EN</button>
         <ul>
-          <li ng-repeat="color in colors | orderBy: '-name' | filter: search" ng-show="color.available">
-            {{color.name}} - {{color.rate | currency: '₽'}}
+          <li ng-repeat="color in colors | orderBy: order | filter: search" ng-show="color.available">
+            <h3>{{color.name}} in EN - {{color.rate | currency: '₽'}}</h3>
+            <div class="remove" ng-click="removeColor(color)">x</div>
+            <span class="belt" style="background: {{color.name}}">{{color.code}} in RO </span>
           </li>
         </ul>
     </div>
