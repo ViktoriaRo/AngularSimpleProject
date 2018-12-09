@@ -7,8 +7,11 @@
     <script src="app/app.js"></script>
   </head>
   <body ng-controller="ProjectController">
-    <ul ng-repeat="color in colors">
-      <li>{{color}}</li>
+    <input type="text" ng-model="search" />
+    <ul ng-repeat="color in colors | orderBy: '-name' | filter: search">
+      <li>
+        {{color.name}} - {{color.rate | currency: '₽'}}
+      </li>
     </ul>
 
   </body>
